@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_haccp/presentatiton/pages/book_page.dart';
-import 'package:food_haccp/presentatiton/pages/search_page.dart';
+import 'package:food_haccp/presentatiton/pages/index.dart';
 import 'package:food_haccp/config/themes/index.dart';
 import 'package:food_haccp/presentatiton/widgets/index.dart';
-import 'home_page.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
