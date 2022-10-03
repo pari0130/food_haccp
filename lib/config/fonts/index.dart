@@ -1,0 +1,1 @@
+export 'gmatket_font.dart';
