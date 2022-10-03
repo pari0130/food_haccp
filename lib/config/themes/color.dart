@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 const primary = Color(0xFFFF7D31);
 const secondary = Color(0xFFFFA837);
-const darker = Color(0xFF3E4249);
+const darker = Color(0xB03E4249);
 const cardColor = Color(0xFFEDF0F3);
 const mainColor = Color(0xFF000000);
 const appBgColor = Color(0xFFFAFAFA);
 const shadowColor = Colors.black87;
-const textBoxColor = Color(0xFFe9e9e9);
+const textBoxColor = Color(0xA8EFEFEF);
 
 const bottomBarColor = Colors.white;
 const inActiveColor = Color(0xFF000000);
