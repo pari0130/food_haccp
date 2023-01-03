@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class BookPage extends StatefulWidget {
-  const BookPage({super.key});
+class FavoritePage extends StatefulWidget {
+  const FavoritePage({super.key});
 
   @override
-  State<BookPage> createState() => _BookPageState();
+  State<FavoritePage> createState() => _FavoritePageState();
 }
 
-class _BookPageState extends State<BookPage> {
+class _FavoritePageState extends State<FavoritePage> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -20,7 +20,7 @@ class _BookPageState extends State<BookPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("BookPage"),
+        title: Text("favorite"),
       ),
       body: Center(
         child: Column(

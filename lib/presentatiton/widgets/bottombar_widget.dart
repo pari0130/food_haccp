@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:food_haccp/config/themes/index.dart';
 import 'package:food_haccp/config/fonts/index.dart';
 
@@ -37,7 +38,10 @@ class BottomBarWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(icon,
+                // Center(
+                //   child: SvgPicture.asset("assets/images/house-user-solid.svg", width: 30, height: 30,),
+                // ),
+                 Icon(icon,
                     size: 30, color: isActive ? activeColor : color),
                 const SizedBox(height: 2,),
                 Text(iconText, style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, fontFamily: gmarketSansTTFMedium),),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_haccp/presentatiton/pages/index.dart';
 import 'package:food_haccp/config/themes/index.dart';
 import 'package:food_haccp/presentatiton/widgets/index.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -12,18 +13,33 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   int activeTab = 0;
+  List<Map<String,IconData>> icons = [
+    {"active" : Icons.home_rounded, "unActive" : Icons.home_outlined},
+    {"active" : Icons.find_in_page, "unActive" : Icons.find_in_page_outlined},
+    {"active" : Icons.favorite_outlined, "unActive" : Icons.favorite_outline},
+    {"active" : FontAwesomeIcons.edit, "unActive" : FontAwesomeIcons.solidEdit}
+  ];
+  List<Map<String,String>> iconsData = [
+    {"text" : "홈", "size" : "35"},
+    {"text" : "검색", "size" : "35"},
+    {"text" : "좋아요", "size" : "35"},
+    {"text" : "", "size" : "35"},
+  ];
+
   List<IconData> tapIcons = [
     Icons.home_outlined,
     Icons.find_in_page_outlined,
-    Icons.bookmarks_outlined
+    Icons.favorite_outline,
+    FontAwesomeIcons.edit
   ];
   List<IconData> tapActiveIcons = [
     Icons.home_rounded,
     Icons.find_in_page,
-    Icons.bookmarks
+    Icons.favorite_outlined,
+    FontAwesomeIcons.solidEdit
   ];
-  List<String> tapText = ["홈", "검색", "북마크"];
-  List<Widget> pages = [const HomePage(), const SearchPage(), const BookPage()];
+  List<String> tapText = ["홈", "검색", "좋아요", "아아"];
+  List<Widget> pages = [const HomePage(), const SearchPage(), const FavoritePage(), const FavoritePage()];
 
   @override
   Widget build(BuildContext context) {
