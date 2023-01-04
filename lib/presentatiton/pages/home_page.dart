@@ -28,21 +28,27 @@ class _HomePageState extends State<HomePage> {
   getBody() {
     return SingleChildScrollView(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: Text("Hello Sangvaleap!", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
+          const SizedBox(
+            height: 10,
           ),
-          SizedBox(height: 10,),
           Container(
-            margin: EdgeInsets.only(left: 15, right: 15),
-            child: Text("Find Your Meals", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+            margin: const EdgeInsets.only(left: 15, right: 15),
+            child: const Text(
+              "Find Your Meals",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
           ),
-          SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
           Container(
-              margin: EdgeInsets.only(left: 15, right: 15),
-              child: SearchBox(hint: "", suffix: Icon(Icons.search, color: darker),)
+            margin: const EdgeInsets.only(left: 15, right: 15),
+            child: SearchBox(
+              hint: "",
+              suffix: Icon(Icons.search, color: darker),
+            ),
           ),
         ],
       ),
