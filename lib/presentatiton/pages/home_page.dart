@@ -51,14 +51,14 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       width: 10,
                     ),
-                    const Flexible(
+                    Flexible(
                       fit: FlexFit.tight,
                       child: GestureSearchBox(
                         hint: "",
                         suffix: Icon(Icons.search, color: darker),
-                        // onTap: () {
-                        //   print("dd");
-                        // },
+                        onTap: () {
+                          print("dd");
+                        },
                       ),
                     ),
                   ],

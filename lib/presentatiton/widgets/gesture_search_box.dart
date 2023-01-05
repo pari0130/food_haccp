@@ -24,6 +24,7 @@ class GestureSearchBox extends StatelessWidget {
             borderRadius: BorderRadius.circular(5)),
         child: TextField(
           decoration: InputDecoration(
+            enabled: false,
             prefixIcon: prefix,
             suffixIcon: suffix,
             border: InputBorder.none,
