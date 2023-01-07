@@ -1,3 +1,3 @@
 export 'bottombar_widget.dart';
-export 'search_box.dart';
-export 'gesture_search_box.dart';
+export 'search_box_widget.dart';
+export 'gesture_search_box_widget.dart';

@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Flexible(
                       fit: FlexFit.tight,
-                      child: GestureSearchBox(
+                      child: GestureSearchBoxWidget(
                         hint: "",
                         suffix: Icon(Icons.search, color: darker),
                         onTap: () {

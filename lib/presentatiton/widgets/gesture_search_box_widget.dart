@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_haccp/config/themes/index.dart';
 
-class GestureSearchBox extends StatelessWidget {
-  const GestureSearchBox(
+class GestureSearchBoxWidget extends StatelessWidget {
+  const GestureSearchBoxWidget(
       {Key? key, this.hint = "", this.onTap, this.prefix, this.suffix})
       : super(key: key);
   final String hint;

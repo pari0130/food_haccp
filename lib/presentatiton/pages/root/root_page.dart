@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 import 'package:food_haccp/presentatiton/pages/home/home_page.dart';
 import 'package:food_haccp/presentatiton/pages/root/root_controller.dart';
-import 'package:food_haccp/presentatiton/pages/search/search_page.dart';
+import 'package:food_haccp/presentatiton/pages/search/search_main_page.dart';
 import 'package:food_haccp/presentatiton/pages/favorite/favorite_page.dart';
 
 class RootPage extends StatelessWidget {
@@ -19,7 +19,7 @@ class RootPage extends StatelessWidget {
               index: controller.tabIndex,
               children: [
                 HomePage(),
-                SearchPage(),
+                SearchMainPage(),
                 FavoritePage()
               ],
             ),

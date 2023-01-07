@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'search_controller.dart';
 import 'package:get/get.dart';
 import 'package:food_haccp/presentatiton/route/app_routes.dart';
-import 'home_controller.dart';
 import 'package:food_haccp/config/fonts/index.dart';
 import 'package:food_haccp/presentatiton/widgets/index.dart';
 import 'package:food_haccp/config/themes/index.dart';
 
-class HomePage extends GetView<HomeController> {
-  const HomePage({super.key});
+class SearchMainPage extends GetView<SearchController> {
+  const SearchMainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,29 +59,13 @@ class HomePage extends GetView<HomeController> {
           ],
         ),
       ),
-      body: getBody(),
-    );
-  }
-
-  getBody() {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
+      body: Container(
+        child: Center(
+          child: Text(
+            "Search Main Page",
+            style: TextStyle(fontSize: 20),
           ),
-          Container(
-            margin: const EdgeInsets.only(left: 15, right: 15),
-            child: const Text(
-              "Find Your Meals",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-        ],
+        ),
       ),
     );
   }
