@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:food_haccp/presentatiton/route/app_routes.dart';
 import 'package:logger/logger.dart';
-import 'package:responsive_grid_list/responsive_grid_list.dart';
 import 'package:food_haccp/data/models/index.dart';
 import 'home_controller.dart';
 import 'package:food_haccp/config/fonts/index.dart';
@@ -69,32 +68,30 @@ class HomePage extends GetView<HomeController> {
   }
 
   getBody() {
-    return SingleChildScrollView(
-      child: Container(
+    return Container(
+      alignment: Alignment.topCenter,
+      child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              //alignment: Alignment.center,
-              color: Colors.blue,
-              margin: const EdgeInsets.only(left: 20, right: 20),
-              height: 250,
-              child: ResponsiveGridList(
-                //maxItemsPerRow: 5,
-                rowMainAxisAlignment: MainAxisAlignment.start,
-                //horizontalGridMargin: 20,
-                horizontalGridSpacing: 5,
-                verticalGridMargin: 20,
-                minItemWidth: 70,
+              constraints: const BoxConstraints(
+                minHeight: 50
+              ),
+              // color: Colors.blue,
+              margin: const EdgeInsets.all(10),
+              // height: 250,
+              child: Wrap(
+                spacing: 20,
                 children: listCategories(),
               ),
             ),
             const SizedBox(
-              height: 20,
+              height: 10,
             ),
             Container(
               color: Colors.blue,
-              margin: const EdgeInsets.only(left: 20, right: 20),
+              margin: const EdgeInsets.all(10),
               height: 250,
               child: ColoredBox(
                 color: Colors.lightBlue,

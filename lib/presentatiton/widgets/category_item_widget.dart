@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 import 'package:food_haccp/config/themes/index.dart';
+import 'package:food_haccp/config/fonts/index.dart';
 
 class CategoryItemWidget extends StatelessWidget {
   CategoryItemWidget(
@@ -16,12 +16,13 @@ class CategoryItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        logger.d("ddd");
+        logger.i("[CATEGORY] selected item -> { name : ${data["name"]} }");
       },
-      child: Stack(
+      child: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(10),
+            margin: const EdgeInsets.only(top: 10),
+            padding: const EdgeInsets.all(10),
             //margin: EdgeInsets.only(right: 10),
             width: 50,
             decoration: BoxDecoration(
@@ -32,7 +33,7 @@ class CategoryItemWidget extends StatelessWidget {
                   color: shadowColor.withOpacity(0.05),
                   spreadRadius: .5,
                   blurRadius: .5,
-                  offset: Offset(0, 1), // changes position of shadow
+                  offset: const Offset(0, 1), // changes position of shadow
                 ),
               ],
             ),
@@ -50,6 +51,17 @@ class CategoryItemWidget extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          SizedBox(
+            height: 2,
+          ),
+          Text(
+            data["name"],
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                fontFamily: gmarketSansTTFMedium,
+                fontSize: 10,
+                color: Colors.black),
           ),
         ],
       ),

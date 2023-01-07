@@ -1,18 +1,17 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:food_haccp/config/assets/categories_assets.dart';
 
 List categories = [
-  {"name": "과자", "icon": const AssetImage('assets/icons/snack.png')},
-  {"name": "캔디류", "icon": const AssetImage('assets/icons/candy.png')},
-  {"name": "음료", "icon": const AssetImage('assets/icons/soda.png')},
-  {"name": "빵류", "icon": const AssetImage('assets/icons/bread.png')},
-  {"name": "햄류", "icon": const AssetImage('assets/icons/ham.png')},
-  {"name": "포장육", "icon": const AssetImage('assets/icons/package.png')},
-  {"name": "수산물가공품", "icon": const AssetImage('assets/icons/fish.png')},
-  {"name": "만두류", "icon": const AssetImage('assets/icons/mandu.png')},
-  {"name": "두부류", "icon": const AssetImage('assets/icons/tofu.png')},
-  {"name": "떡류", "icon": const AssetImage('assets/icons/songpyeon.png')},
-  {"name": "절임류", "icon": const AssetImage('assets/icons/pickles.png')},
-  {"name": "혼합장", "icon": const AssetImage('assets/icons/gochujang.png')},
-  {"name": "국수", "icon": const AssetImage('assets/icons/ramen.png')},
+  {"name": "과자", "icon": CategoriesAssets.snack},
+  {"name": "캔디류", "icon": CategoriesAssets.candy},
+  {"name": "음료", "icon": CategoriesAssets.soda},
+  {"name": "빵류", "icon": CategoriesAssets.bread},
+  {"name": "햄류", "icon": CategoriesAssets.ham},
+  {"name": "포장육", "icon": CategoriesAssets.package},
+  {"name": "수산가공품", "icon": CategoriesAssets.fish},
+  {"name": "만두류", "icon": CategoriesAssets.mandu},
+  {"name": "두부류", "icon": CategoriesAssets.tofu},
+  {"name": "떡류", "icon": CategoriesAssets.songpyeon},
+  {"name": "절임류", "icon": CategoriesAssets.pickles},
+  {"name": "혼합장", "icon": CategoriesAssets.gochujang},
+  {"name": "국수", "icon": CategoriesAssets.ramen},
 ];
