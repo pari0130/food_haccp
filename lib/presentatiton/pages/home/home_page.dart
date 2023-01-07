@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:food_haccp/presentatiton/route/app_routes.dart';
+import 'package:logger/logger.dart';
+import 'package:responsive_grid_list/responsive_grid_list.dart';
+import 'package:food_haccp/data/models/index.dart';
 import 'home_controller.dart';
 import 'package:food_haccp/config/fonts/index.dart';
 import 'package:food_haccp/presentatiton/widgets/index.dart';
@@ -8,6 +11,8 @@ import 'package:food_haccp/config/themes/index.dart';
 
 class HomePage extends GetView<HomeController> {
   const HomePage({super.key});
+
+  static final logger = Logger();
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +52,7 @@ class HomePage extends GetView<HomeController> {
                         hint: "",
                         suffix: Icon(Icons.search, color: darker),
                         onTap: () {
-                          print("dd");
+                          logger.i("dd");
                           Get.toNamed(AppRoutes.SEARCH_DO);
                         },
                       ),
@@ -65,24 +70,53 @@ class HomePage extends GetView<HomeController> {
 
   getBody() {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          Container(
-            margin: const EdgeInsets.only(left: 15, right: 15),
-            child: const Text(
-              "Find Your Meals",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      child: Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              //alignment: Alignment.center,
+              color: Colors.blue,
+              margin: const EdgeInsets.only(left: 20, right: 20),
+              height: 250,
+              child: ResponsiveGridList(
+                //maxItemsPerRow: 5,
+                rowMainAxisAlignment: MainAxisAlignment.start,
+                //horizontalGridMargin: 20,
+                horizontalGridSpacing: 5,
+                verticalGridMargin: 20,
+                minItemWidth: 70,
+                children: listCategories(),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              color: Colors.blue,
+              margin: const EdgeInsets.only(left: 20, right: 20),
+              height: 250,
+              child: ColoredBox(
+                color: Colors.lightBlue,
+                child: Padding(
+                  padding: const EdgeInsets.all(32),
+                  child: Text(
+                    '1',
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
+  }
+
+  listCategories() {
+    List<Widget> lists = List.generate(categories.length,
+        (index) => CategoryItemWidget(data: categories[index]));
+    return lists;
   }
 }
