@@ -3,8 +3,8 @@ import 'package:logger/logger.dart';
 import 'package:food_haccp/config/themes/index.dart';
 import 'package:food_haccp/config/fonts/index.dart';
 
-class CategoryItemWidget extends StatelessWidget {
-  CategoryItemWidget(
+class ListItemWidget extends StatelessWidget {
+  ListItemWidget(
       {Key? key, required this.data, this.seleted = false, this.onTap})
       : super(key: key);
   final data;
@@ -16,7 +16,7 @@ class CategoryItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        logger.i("[CATEGORY] selected item -> { name : ${data["name"]} }");
+        logger.i("[LIST] selected item -> { name : ${data["name"]} }");
       },
       child: Column(
         children: [
@@ -24,7 +24,8 @@ class CategoryItemWidget extends StatelessWidget {
             margin: const EdgeInsets.only(top: 10),
             padding: const EdgeInsets.all(10),
             //margin: EdgeInsets.only(right: 10),
-            width: 50,
+            width: 170,
+            height: 170,
             decoration: BoxDecoration(
               color: textBoxColor,
               borderRadius: BorderRadius.circular(8),
@@ -38,8 +39,8 @@ class CategoryItemWidget extends StatelessWidget {
               ],
             ),
             child: SizedBox(
-              height: 30,
-              width: 30,
+              height: 50,
+              width: 50,
               child: ClipRRect(
                 child: Container(
                   decoration: BoxDecoration(

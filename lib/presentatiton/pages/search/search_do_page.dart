@@ -15,10 +15,10 @@ class SearchDoPage extends GetView<SearchDoController> {
         leading: Padding(
           padding: const EdgeInsets.only(left: 15, right: 5),
           child: BackButton(
-              color: Colors.black
+              color: mainColor
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: backgroundColor,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -5,6 +5,7 @@ import 'package:food_haccp/presentatiton/pages/home/home_page.dart';
 import 'package:food_haccp/presentatiton/pages/root/root_controller.dart';
 import 'package:food_haccp/presentatiton/pages/search/search_main_page.dart';
 import 'package:food_haccp/presentatiton/pages/favorite/favorite_page.dart';
+import 'package:food_haccp/config/themes/index.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({Key? key}) : super(key: key);
@@ -26,14 +27,14 @@ class RootPage extends StatelessWidget {
           ),
           bottomNavigationBar: Container(
             child: BottomNavigationBar(
-              unselectedItemColor: Colors.black,
-              selectedItemColor: Colors.blueAccent,
+              unselectedItemColor: black,
+              selectedItemColor: blueAccent,
               onTap: controller.changeTabIndex,
               currentIndex: controller.tabIndex,
               showSelectedLabels: false,
               showUnselectedLabels: false,
               type: BottomNavigationBarType.fixed,
-              backgroundColor: Colors.white,
+              backgroundColor: white,
               elevation: 5.0,
               items: [
                 _bottomNavigationBarItem(

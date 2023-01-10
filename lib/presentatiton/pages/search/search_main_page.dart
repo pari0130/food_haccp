@@ -13,7 +13,7 @@ class SearchMainPage extends GetView<SearchController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,7 +32,7 @@ class SearchMainPage extends GetView<SearchController> {
                       child: const Text(
                         "아푸",
                         style: TextStyle(
-                            color: Colors.black,
+                            color: black,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             fontFamily: gmarketSansTTFBold),

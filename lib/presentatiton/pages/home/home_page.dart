@@ -17,7 +17,7 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: white,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -36,7 +36,7 @@ class HomePage extends GetView<HomeController> {
                       child: const Text(
                         "아푸",
                         style: TextStyle(
-                            color: Colors.black,
+                            color: mainColor,
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
                             fontFamily: gmarketSansTTFBold),
@@ -75,11 +75,10 @@ class HomePage extends GetView<HomeController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              constraints: const BoxConstraints(
-                minHeight: 50
-              ),
+              alignment: Alignment.center,
+              constraints: const BoxConstraints(minHeight: 50),
               // color: Colors.blue,
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
               // height: 250,
               child: Wrap(
                 spacing: 20,
@@ -87,22 +86,31 @@ class HomePage extends GetView<HomeController> {
               ),
             ),
             const SizedBox(
-              height: 10,
+              height: 15,
             ),
             Container(
-              color: Colors.blue,
-              margin: const EdgeInsets.all(10),
-              height: 250,
-              child: ColoredBox(
-                color: Colors.lightBlue,
-                child: Padding(
-                  padding: const EdgeInsets.all(32),
-                  child: Text(
-                    '1',
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                ),
+              margin: const EdgeInsets.only(left: 15, right: 15),
+              // 카테고리 태그 음식점, query=TAG, listTags
+              child: const Text(
+                "가장 많이 찾아본 식품이에요",
+                style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: gmarketSansTTFMedium),
+              ),
+            ),
+            const SizedBox(
+              height: 5,
+            ),
+            Container(
+              alignment: Alignment.center,
+              constraints: const BoxConstraints(minHeight: 100),
+              // color: Colors.blue,
+              margin: const EdgeInsets.only(left: 10, right: 10, top: 5, bottom: 10),
+              // height: 250,
+              child: Wrap(
+                spacing: 15,
+                children: listItems(),
               ),
             ),
           ],
@@ -114,6 +122,12 @@ class HomePage extends GetView<HomeController> {
   listCategories() {
     List<Widget> lists = List.generate(categories.length,
         (index) => CategoryItemWidget(data: categories[index]));
+    return lists;
+  }
+
+  listItems() {
+    List<Widget> lists = List.generate(
+        categories.length, (index) => ListItemWidget(data: categories[index]));
     return lists;
   }
 }
